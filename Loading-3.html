@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+    <style type="text/css" media="all">
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+     .load{
+       text-align: center;
+        margin-top:30px ;
+        width: 200px;
+        height: 200px;
+        color: white;
+        border-radius: 50%;
+        border-top: 10px solid red;
+        position: relative;
+        animation: ro 1s linear infinite;
+      }
+      @keyframes ro{
+        to{
+          transform: rotate(360deg);
+        }
+      }
+      .load::before, .load::after{
+        content: "";
+        width: 200px;
+        height: 200px;
+        background: ;
+       
+        position: absolute;
+        top: -10px;
+        left: 0;
+        transform: translate(-50%,-50%);
+        border-top: 10px solid ;
+        border-radius: 50%;
+      }
+      .load::before{
+        border-color: orange;
+        transform: rotate(120deg);
+      }
+      .load::after{
+        border-color: blue;
+        transform: rotate(-120deg);
+      }
+      span{
+        position: absolute;
+        top: 50%;
+        left: 35%;
+        animation: rop linear 1s infinite;
+      }
+      @keyframes rop{
+        to{
+          transform: rotate(-360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="load">
+      <span>Loading...</span>
+    </div>
+  </body>
+</html>
